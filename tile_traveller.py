@@ -43,16 +43,16 @@ def updatePosition(px, py, direction):
 posX = 1
 posY = 1
 
+print("You can travel:", validMoves(posX, posY))
 while True:
-    if posX == 3 and posY == 1:
-        print("Victory!")
-        break
-    print("You can travel:", validMoves(posX, posY))
     user_input = getInput()
     if inputValid(validMoves(posX, posY), user_input):
-
         posX, posY = updatePosition(posX, posY, user_input)
+        if posX == 3 and posY == 1:
+            print("Victory!")
+            break
+        else:
+            print("You can travel:", validMoves(posX, posY))
     else:
         print("Not a valid direction!")
-
 
