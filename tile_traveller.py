@@ -33,10 +33,10 @@ def inputValid(validMoves, inp):
     return inp in validMoves
 
 def updatePosition(px, py, direction):
-    px += 1 if "N" in direction else 0
-    px -= 1 if "S" in direction else 0
-    py += 1 if "E" in direction else 0
-    py -= 1 if "W" in direction else 0
+    py += 1 if "N" in direction else 0
+    py -= 1 if "S" in direction else 0
+    px += 1 if "E" in direction else 0
+    px -= 1 if "W" in direction else 0
     return px, py
 
 
@@ -45,5 +45,13 @@ posY = 1
 
 while True:
     if posX == 3 and posY == 1:
+        print("Victory!")
         break
+    print("You can travel:", validMoves(posX, posY))
+    user_input = getInput()
+    if inputValid(validMoves(posX, posY), user_input):
+
+        posX, posY = updatePosition(posX, posY, user_input)
+
+
 
