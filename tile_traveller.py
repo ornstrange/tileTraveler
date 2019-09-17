@@ -52,6 +52,7 @@ while True:
     if inputValid(validMoves(posX, posY), user_input):
 
         posX, posY = updatePosition(posX, posY, user_input)
-
+    else:
+        print("Not a valid direction!")
 
 
