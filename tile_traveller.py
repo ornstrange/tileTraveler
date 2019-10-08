@@ -66,6 +66,7 @@ while True:
     while True:
         valid_moves = validMoves(posX, posY)
         print("You can travel:", valid_moves)
+        moves += 1
 
         user_input = random_direction()
 
@@ -81,7 +82,6 @@ while True:
                     print(f"You received 1 coin, your total is now {coins}.")
         else:
             print("Not a valid direction!")
-        moves += 1
     play_again = input("Play again (y/n): ")
     if play_again.upper() != "Y": # quit if play_again is not Y
         break
